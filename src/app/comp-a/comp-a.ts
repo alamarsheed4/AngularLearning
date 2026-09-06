@@ -49,6 +49,19 @@ keyUp(eventDetails: KeyboardEvent){
    
 }
   customerLocation = 'India'
+// This approach when you want seperate propery binding and event binding
+  // customerLocationChange(customerName:any){
+  //   console.log(customerName);
+
+  //   this.customerLocation = customerName
+    
+  // }
+
+  username = '';
+
+  ischecked = false;
+
+  selectCity = '';
 
 
 }
