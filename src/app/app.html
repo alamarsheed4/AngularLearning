@@ -1,43 +1,137 @@
-<app-comp-a></app-comp-a>
+<!-- 
+<div class="text-center mt-5">
+<h1>Hello This is root App</h1>
 
+<button class="btn btn-primary ">Click Here</button>
+</div>
 
-<!--
-<h1>This is Angular My App</h1>
+<div class="container mt-5">
+  <div class="row g-4">
 
-<h1>Hello This is: {{Name}}</h1>
+    <!-- Card 1 
+    <div class="col-md-4">
+      <div class="card text-center shadow-lg h-100">
+        <div class="card-body">
+          <h5 class="card-title">Angular</h5>
 
-<h2>{{getUserDetails()}}</h2>
+          <p class="card-text" style="background: #e2e2e2;">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Adipisci illo ratione consequatur animi assumenda, nulla
+            quasi libero iste provident optio.
+          </p>
 
- <input type="text" value="Admin"> 
+          <button class="btn btn-primary">Click Here</button>
+        </div>
+      </div>
+    </div>
 
-<input type="text" [value]="customerRole" placeholder="Please Enter your Value"> Property Binding
+    <!-- Card 2 
+    <div class="col-md-4">
+      <div class="card text-center shadow-lg h-100">
+        <div class="card-body">
+          <h5 class="card-title">React</h5>
 
-<button class="btn btn-primary">Click Here</button>
+          <p class="card-text" style="background: #e2e2e2;">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Adipisci illo ratione consequatur animi assumenda, nulla
+            quasi libero iste provident optio.
+          </p>
 
-<h1>{{ProjectName}}- {{ProjectTitle}}</h1>
+          <button class="btn btn-primary">Click Here</button>
+        </div>
+      </div>
+    </div>
 
+    <!-- Card 3 
+    <div class="col-md-4">
+      <div class="card text-center shadow-lg h-100">
+        <div class="card-body">
+          <h5 class="card-title">JavaScript</h5>
 
-<textarea rows="5" cols="50" [value]="Message">
+          <p class="card-text" style="background: #e2e2e2;">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Adipisci illo ratione consequatur animi assumenda, nulla
+            quasi libero iste provident optio.
+          </p>
 
-</textarea>
+          <button class="btn btn-primary">Click Here</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div> -->
+
+<h1 class="text-center">Angular directives</h1>
+
+<!-- The directives is a instruction that tell the angular
+ how to work with HTML Elements.It change the element appearence
+modify, behaviour and control the content to display.
+
+Types of directives
+
+1. Component Directives
+2. Attributes Directives
+3. Structure Directives
+
+1. Component Directives- create reusable user interface section
+2. Attributes Directives - change elemet behaviour, appearance
+Example - ngStyle, ngClass
+3. Structure Directives - add, remove and repeat element in DOM
+-->
+
+<h2 class="text-center">1. ngStyle</h2>
+
+<!-- <div style="background: red; color: white;">Red</div> -->
+
+<div [ngStyle]="{'background-color': divBgColor,'color': divTextColor}">Angular ngStyle</div>
+
+<hr>
+
+<h2 class="text-center">1. ngClass</h2>
+
+<!-- <div class="success">Angular NgClass</div> -->
+
+<!-- Now Using ngClass -->
+
+<div [ngClass]="divCheckStatus? divSucceesClass: divFailClass">Angular NgClass
+<button (click) = 'checkStatus()' class="btn btn-warning">Check Status</button>
+</div>
+  <br><br>
+
+<div class="text-center" [ngClass]="currentClass">{{Message}}
+<br><br>
+<button (click) = 'checkStatus()' class="btn btn-warning">Check Status</button>
+</div>
+
+<h2 class="text-center">2. ngIf</h2>
+
+<!-- ngIf work on the condition whether the have to add, show
+show in your DOM
+-->
+
+<!-- Note: Using ngStyle we can hide the HTML Element but in DOM
+           but using *ngIf  we can hide the HTML Element even in DOM also
+-->
+
+<div *ngIf = "ngElement == 'ngIf Element'">
+  This Is ngIf Angular Directives
+</div>
+
+<div *ngIf = 'isVisible'>
+  <h2>This is Angular 22</h2>
+</div>
+
+<button (click) = 'showMessage()' class="btn btn-primary">Show Message</button>
+
+<div *ngIf ='isVisible' >
+    <h2>This is Message</h2>
+</div>
 
 <br><br>
-<table class="table table-bordered table-striped">
-          <thead class="table-primary">
-            <tr>
-              <th>S.No</th>
-              <th>Employee Name</th>
-            </tr>
-          </thead>
- 
-          <tbody>
-            @for (employeeName of employeeList; track $index) {
-              <tr>
-                <td>{{ $index + 1 }}</td>
-                <td>{{ employeeName }}</td>
-              </tr>
-            }
-            
-          </tbody>
-        </table>
--->
+
+<div [ngClass] = "age>18 ? divSucceesClass: divFailClass">
+   <h2 *ngIf = "age >18">You Are Adult</h2>
+
+    <h2 *ngIf = "age < 18">You Are Child</h2>
+</div>

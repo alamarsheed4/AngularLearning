@@ -1,35 +1,56 @@
+import { CommonModule } from '@angular/common';
 import { Component} from '@angular/core';
-import {CompA} from './comp-a/comp-a';
 import { FormsModule } from '@angular/forms';
 @Component({
-  imports:[CompA,FormsModule],
+  imports:[FormsModule, CommonModule],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
 })
 export class App {
 
-  Name:string = 'Arsheed Alam'
-  title:string = 'Angular Course'
-  Salary:number = 34000
+  divBgColor = 'blue'
+  divTextColor = 'white'
 
+  divCheckStatus = true
 
-  customerRole = 'Admin'
-Message = "This is Text Area"
-  getUserDetails(){
-    return `This is ${this.Name} Salary: ${this.Salary} 
-    Title: ${this.title}`
+  divSucceesClass = 'success'
+  divFailClass = 'failure'
+  
+  divSuccessMessage = "This is success Message"
+  divFailureMessage = "This is Failure Message"
+
+  Message = this.divSuccessMessage
+
+  currentClass = this.divSucceesClass
+
+  checkStatus(){
+    if(this.currentClass === this.divSucceesClass){
+       this.currentClass = this.divFailClass
+       this.Message = this.divFailureMessage
+    }else{
+       this.currentClass = this.divSucceesClass
+       this.Message = this.divSuccessMessage
+    }
   }
 
-  employeeList: any[] = [" Arsheed ", "Rahul", "Suman", "Kiran"];
+ngElement = "ngIf Element"
 
+isVisible = false
 
-  ProjectName = "Angular";
+showMessage(){
+   if(this.isVisible == true){
+    this.isVisible = false
+   }else{
+    this.isVisible = true
+   }
+}
 
-  ProjectTitle = "Basic Angular Application"
-
+age= 34
 
 }
+
+
 
 
 
