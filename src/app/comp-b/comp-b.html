@@ -1,0 +1,32 @@
+<!-- <p>comp-b works!</p>  -->
+
+<h1>This is Component B</h1>
+
+
+<!-- ng Template
+it defines the block of HTML which is not display automatically
+it displays when it is explicitly rendered
+it is commonly used with TemplateRef and ViewContainerRef 
+-->
+
+<h1>Hey! There</h1>
+
+<ng-template #displayTemplate>
+    <h1>This is ng Template</h1>
+</ng-template>
+
+<input type="text" #employeeName/>
+
+<button (click)="onClick(employeeName)">Cick Here</button>
+
+<button (click)="onClickTemp(displayTemplate)">Cick Here</button>
+
+
+<div *ngIf="employeeStatus; else offline">
+    <p>Employee is Online</p>
+</div>
+
+<ng-template #offline>
+    <h1>Employee is offline</h1>
+</ng-template>
+
