@@ -22,4 +22,6 @@ export class CompB {
   }
 
   employeeStatus = false
+
+  customer_Id = 2
 }

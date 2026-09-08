@@ -4,9 +4,9 @@
 
 
 <!-- ng Template
-it defines the block of HTML which is not display automatically
-it displays when it is explicitly rendered
-it is commonly used with TemplateRef and ViewContainerRef 
+It defines the block of HTML which is not display automatically
+It displays when it is explicitly rendered
+It is commonly used with TemplateRef and ViewContainerRef 
 -->
 
 <h1>Hey! There</h1>
@@ -30,3 +30,34 @@ it is commonly used with TemplateRef and ViewContainerRef
     <h1>Employee is offline</h1>
 </ng-template>
 
+<!-- @Switch -->
+
+ @switch (customer_Id) {
+
+  @case (0) {
+    <p>
+      Hello, customer id is = 0
+    </p>
+  }
+
+  @case (1) {
+    <input
+      type="text"
+      placeholder="Enter Here"
+      style="background-color: aqua;"
+    >
+  }
+
+  @case (2) {
+    <select>
+      <option>Select Country</option>
+      <option>INDIA</option>
+      <option>USA</option>
+      <option>CHINA</option>
+    </select>
+  }
+
+  @default {
+    <p>No control is available!!</p>
+  }
+}
