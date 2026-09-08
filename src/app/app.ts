@@ -3,8 +3,9 @@ import { Component} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CompA } from './comp-a/comp-a';
 import { CompB } from './comp-b/comp-b';
+import { CompC } from './comp-c/comp-c';
 @Component({
-  imports:[FormsModule, CommonModule,CompA,CompB],
+  imports:[FormsModule, CommonModule,CompA,CompB,CompC],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',

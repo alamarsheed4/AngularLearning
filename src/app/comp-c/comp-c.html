@@ -1,0 +1,126 @@
+<!-- <p>comp-c works!</p> -->
+
+<!-- Change Detection(CD) :
+Angular Change Detection is the process of checking component
+data and updating the user interface when that data changes
+ 
+Traditional way of change detection in angular:
+if event happens Zone.js check every component element and detect
+the changes and then update DOM/HTML Element
+
+Latest Change detection:
+if change happens angular get direct notification and update the
+DOM/HTML element
+-->
+
+<div class="container mt-5">
+    <h2 class="mb-4">
+        Angular Change Detection
+    </h2>
+</div>
+
+<div class="card shadow-sm mb-4">
+    <div class="card-header bg-primary text-white">
+        Component Data Change
+    </div>
+    <div class="card-body">
+        <h5>
+            Employee: {{Employee}}
+        </h5>
+
+        <button class="btn btn-primary mt-2" (click)="changeEmployee()">Change Employee</button>
+
+    </div>
+</div>
+
+
+<div class="card shadow-sm mb-4">
+    <div class="card-header bg-primary text-white">
+        Asynchronous Change
+    </div>
+    <div class="card-body">
+        <h5>
+            {{currentDate}}
+        </h5>
+
+        <button class="btn btn-primary mt-2" (click)="setTime()">Change Time</button>
+
+    </div>
+</div>
+
+<!--Angular Signal
+Using signal we can notify the changes to the Angular and it 
+Detect That changes and update the DOM/HTML Element
+-->
+
+<div class="container mt-2">
+    <h2 class="mb-4">
+        Angular Signal
+    </h2>
+</div>
+
+<div class="card shadow-sm mb-4">
+    <div class="card-header bg-primary text-white">
+    Creating and Reading Signals
+    </div>
+
+    <div class="card-body">
+        <h4>
+            Employee Name: {{EmployeeName()}}
+        </h4>
+        <h4>
+            Employee Count: {{EmployeeCount()}}
+        </h4>
+
+    </div>
+</div>
+
+<!-- SET Method -->
+
+<div class="card shadow-sm mb-5">
+    <div class="card-header bg-primary text-white">
+        Upadating the signal Value using set method
+    </div>
+    <div class="card-body">
+        <h4>
+            Employee Name : {{EmployeeName()}}
+        </h4>
+        <h4>
+            Employee Count : {{EmployeeCount()}}
+        </h4>
+
+        <button class="btn btn-success" (click)="changeDetails()"
+        >Change Details</button>
+    </div>
+</div>
+
+<!-- Update Method -->
+
+
+<div class="card shadow-sm mb-4">
+    <div class="card-header bg-primary text-white">
+        Update the signal value using update method
+    </div>
+    <div class="card-body">
+        <h4>
+            Employee Name : {{EmployeeName()}}
+        </h4>
+        <h4>
+            Employee Count : {{EmployeeCount()}}
+        </h4>
+
+        <button class="btn bg-primary" (click) = 'updateDetails()'
+        >Update Employee</button>
+        |
+        <button class="btn bg-primary" (click) = 'increaseEmployeeCount()'
+        >Increase Employee Count</button>
+        |
+        <button class="btn bg-primary" (click) = 'decreaseEmployeeCount()'
+        >Decrease Employee Count</button>
+    </div> 
+    </div> 
+    
+<!-- Note: Set() directly change or update the signal value
+Whereas update Method take call back function and use the value
+to perform any operations. 
+-->
