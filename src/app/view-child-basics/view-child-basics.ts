@@ -32,12 +32,19 @@ showMessage(){
   console.log(this.Message);
   
 }
+employeeList: string[] = [];
+
 
 @ViewChildren('employee') employees !: QueryList<ElementRef<HTMLInputElement>>
 
   showEmployeeDetails(){
+     this.employeeList = [];
     this.employees.forEach((employee)=>{
-      console.log(employee.nativeElement.value);
+      // console.log(employee.nativeElement.value);
+
+      const name = employee.nativeElement.value.trim()
+      if(name)
+      this.employeeList.push(name)
       
     })
   }
@@ -49,6 +56,7 @@ showMessage(){
   console.log(p.nativeElement.innerText);
 });
   }
+
 
   @ViewChildren('empName') EmpNames !: QueryList <ElementRef>
 

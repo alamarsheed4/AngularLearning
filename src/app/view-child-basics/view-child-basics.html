@@ -51,6 +51,32 @@
     </div>
 
 </div>
+@if(employeeList.length>0){
+<table class="table table-bordered table-striped">
+    <thead class="table-primary">
+        <tr>
+            <th>SR No.</th>
+            <th>Employee Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(emp of employeeList; track $index){
+        <tr>
+            <td>{{$index+1}}</td>
+            <td>{{emp}}</td>
+        </tr>
+    }
+    @empty {
+      <tr>
+        <td colspan="2" class="text-center">
+          No Employees Found!!
+        </td>
+      </tr>
+    }
+
+    </tbody>
+</table>
+}
 
 <!-- Example -2 -->
 
