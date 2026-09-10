@@ -1,0 +1,56 @@
+<p>content-child works!</p>
+<ng-content></ng-content>
+
+<button class="btn btn-success mt-4" (click)="showEmpDetails()">
+    Show Employee!
+</button>
+<hr>
+<strong>{{EmployeeName}}</strong>
+
+<hr>
+
+<button type="button" class="btn btn-info mb-4"
+(click)="showEmployees()"
+>Show Employee Info</button>
+
+@if(EmpList.length> 0){
+<table class="table table-bordered table-striped">
+    <thead class="table-primary">
+        <tr>
+            <th>Sr No.</th>
+            <th>Employee Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(emp of EmpList; track $index){
+            <tr>
+            <td>{{$index+1}}</td>
+            <td>{{emp}}</td>
+        </tr>
+        }
+    </tbody>
+</table>
+}
+<hr>
+<button type="button" class="btn btn-info mb-4"
+(click)="inputBoxDetails()"
+>Show Employee Info</button>
+
+@if(EmployeeDet.length> 0){
+<table class="table table-bordered table-striped">
+    <thead class="table-primary">
+        <tr>
+            <th>Sr No.</th>
+            <th>Employee Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(emp of EmployeeDet; track $index){
+            <tr>
+            <td>{{$index+1}}</td>
+            <td>{{emp}}</td>
+        </tr>
+        }
+    </tbody>
+</table>
+}

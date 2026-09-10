@@ -1,7 +1,7 @@
 import { Component} from '@angular/core';
-import { ViewChildBasics } from './view-child-basics/view-child-basics';
+import { ContentParentComponent } from './content-parent/content-parent';
 @Component({
-  imports:[ViewChildBasics],
+  imports:[ContentParentComponent],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
