@@ -15,8 +15,7 @@ export class ContentChildComponent implements AfterContentInit {
   ngAfterContentInit(): void {
     console.log(this.employee);
     console.log(this.employee.nativeElement.innerText);
-    
-    
+     
   }
 
   // showEmpDetails(){
