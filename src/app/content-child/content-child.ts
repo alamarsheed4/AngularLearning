@@ -1,4 +1,4 @@
-import { Component, ContentChild, ContentChildren, ElementRef, QueryList } from '@angular/core';
+import { AfterContentInit, Component, ContentChild, ContentChildren, ElementRef, QueryList } from '@angular/core';
 
 @Component({
   imports: [],
@@ -6,50 +6,57 @@ import { Component, ContentChild, ContentChildren, ElementRef, QueryList } from 
   styleUrl: './content-child.css',
   templateUrl: './content-child.html',
 })
-export class ContentChildComponent {
+export class ContentChildComponent implements AfterContentInit {
 
   EmployeeName =""
 
   @ContentChild('employee') employee!: ElementRef<HTMLElement>
 
-  showEmpDetails(){
+  ngAfterContentInit(): void {
     console.log(this.employee);
-
-    this.EmployeeName = this.employee.nativeElement.innerHTML
+    console.log(this.employee.nativeElement.innerText);
+    
+    
   }
 
-  EmpList: string[] = [];
+  // showEmpDetails(){
+  //   console.log(this.employee);
 
-  @ContentChildren('paragraph') Paragraph !: QueryList<ElementRef<HTMLElement>>
+  //   this.EmployeeName = this.employee.nativeElement.innerHTML
+  // }
+
+  // EmpList: string[] = [];
+
+  // @ContentChildren('paragraph') Paragraph !: QueryList<ElementRef<HTMLElement>>
 
 
-  showEmployees(){
-    this.Paragraph.forEach((paragraph:ElementRef<HTMLElement>)=>{
-        console.log(paragraph.nativeElement.innerHTML);
-        let para = paragraph.nativeElement.innerHTML
-        if(para){
-          this.EmpList.push(para)
-        }
+  // showEmployees(){
+  //   this.Paragraph.forEach((paragraph:ElementRef<HTMLElement>)=>{
+  //       console.log(paragraph.nativeElement.innerHTML);
+  //       let para = paragraph.nativeElement.innerHTML
+  //       if(para){
+  //         this.EmpList.push(para)
+  //       }
         
-    })
-  }
+  //   })
+  // }
 
-  EmployeeDet:string[] = []
+  // EmployeeDet:string[] = []
 
-  @ContentChildren('input') employees!: QueryList<ElementRef<HTMLInputElement>>;
+  // @ContentChildren('input') employees!: QueryList<ElementRef<HTMLInputElement>>;
 
-  inputBoxDetails(){
+  // inputBoxDetails(){
 
-      this.employees.forEach((emp:ElementRef<HTMLInputElement>)=>{
+  //     this.employees.forEach((emp:ElementRef<HTMLInputElement>)=>{
         
-      let EmpDet =emp.nativeElement.value;
-      if(EmpDet){
-        this.EmployeeDet.push(EmpDet);
-      }
+  //     let EmpDet =emp.nativeElement.value;
+  //     if(EmpDet){
+  //       this.EmployeeDet.push(EmpDet);
+  //     }
       
       
-  })
+  // })
 
-  }
+  // }
 
 }
