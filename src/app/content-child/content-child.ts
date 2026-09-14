@@ -24,7 +24,7 @@ export class ContentChildComponent implements AfterContentInit {
   //   this.EmployeeName = this.employee.nativeElement.innerHTML
   // }
 
-  // EmpList: string[] = [];
+   EmpList: string[] = [];
 
   // @ContentChildren('paragraph') Paragraph !: QueryList<ElementRef<HTMLElement>>
 
@@ -40,22 +40,22 @@ export class ContentChildComponent implements AfterContentInit {
   //   })
   // }
 
-  // EmployeeDet:string[] = []
+  EmployeeDet:string[] = []
 
-  // @ContentChildren('input') employees!: QueryList<ElementRef<HTMLInputElement>>;
+  @ContentChildren('input') employees!: QueryList<ElementRef<HTMLInputElement>>;
 
-  // inputBoxDetails(){
+  inputBoxDetails(){
 
-  //     this.employees.forEach((emp:ElementRef<HTMLInputElement>)=>{
+      this.employees.forEach((emp:ElementRef<HTMLInputElement>)=>{
         
-  //     let EmpDet =emp.nativeElement.value;
-  //     if(EmpDet){
-  //       this.EmployeeDet.push(EmpDet);
-  //     }
+      let EmpDet =emp.nativeElement.value;
+      if(EmpDet){
+        this.EmployeeDet.push(EmpDet);
+      }
       
       
-  // })
+  })
 
-  // }
+  }
 
 }
