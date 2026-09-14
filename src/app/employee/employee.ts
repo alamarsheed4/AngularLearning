@@ -1,17 +1,25 @@
-import { Component, ViewChild } from '@angular/core';
-import { ViewChildBasics } from '../view-child-basics/view-child-basics';
-
+import { Component, ViewChild, viewChildren } from '@angular/core';
 @Component({
   imports: [],
   selector: 'app-employee',
   styleUrl: './employee.css',
-  templateUrl: './employee.html',
+  templateUrl: './employee.html', 
+  
+   
 })
 export class Employee {
 
-  @ViewChild(ViewChildBasics) child !: ViewChildBasics
+  // name = viewChildren(ViewChildBasics)
 
-  callChild(){
-    this.child.showMessage();
-  }
+  // showEmployeeName(){
+  //     this.name().forEach((employee)=>{
+  //       employee.showEmployeeName();
+  //     });
+  // }
+
+  // @ViewChild(ViewChildBasics) child !: ViewChildBasics
+
+  // callChild(){
+  //   this.child.showMessage();
+  // }
 }

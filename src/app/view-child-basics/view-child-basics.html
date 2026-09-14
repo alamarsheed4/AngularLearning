@@ -1,12 +1,13 @@
 <p>view-child-basics works!</p>
 
-<!-- Example of @ViewChild -->
+<!-- Example of @ViewChild and viewChild signal -->
 
 <div class="card shadow-sm mb-4">
     <div class="card-header bg-primary text-white">
         Employees
     </div>
     <div class="card-body">
+        <div>
         <label class="form-label">Employee Name</label>
         <input type="text" class="form-control" value="Arsheed"
         placeholder="Enter Employee Name" #employeeName>
@@ -14,10 +15,98 @@
         >Show Employee</button>
 
         <p>{{EmployeeName}}</p>
+
+        </div>
+        <label class="form-label">Employee Email</label>
+        <input type="text" class="form-control" value="arsheed.muz@gmail.com"
+        placeholder="Enter Employee Name" #employeeEmail>
+        <button class="btn btn-info mt-3" (click)="showEmail()"
+        >Show Employee</button>
+
+        <p>{{selectedEmployeeEmail()}}</p>
+        <div>
+
+        </div>
     </div>
 </div>
 
-<hr>
+<!-- Example of viewChildren signal -->
+
+<div class="card shadow-sm mb-4">
+    <div class="card-header bg-primary text-white">
+        Employee Details using signal based query!!
+        <div class="card-body">
+            
+            <label class="form-label mt-4" for="">Employee Name</label>
+            <input type="text" class="form-control" value="Peter"
+            placeholder="Enter Name Here" #emp>
+           
+
+            
+            <label class="form-label mt-4" for="">Employee Name</label>
+            <input type="text" class="form-control" value="Robert"
+            placeholder="Enter Name Here" #emp>
+            
+
+            
+            <label class="form-label mt-4" for="">Employee Name</label>
+            <input type="text" class="form-control" value="Sandy"
+            placeholder="Enter Name Here" #emp>
+           
+            <button class="btn btn-info mt-4" (click)="showDetails()">Show Employee</button>
+
+        </div>
+    </div>
+
+</div>
+
+@if(EmpDetails.length > 0){
+<table class="table table-bordered table-striped">
+    <thead class="table-primary ">
+        <tr>
+            <th>SR No.</th>
+            <th>Employee Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(emp of EmpDetails; track $index){
+        <tr>
+            <td>{{$index+1}}</td>
+            <td>{{emp}}</td>
+        </tr>
+    }
+    </tbody>
+</table>
+}
+
+<!-- Example 2 view children -->
+<ng-content>
+<p class="bg-primary" #para>This is paragraph one</p>
+<p class="bg-success" #para>This is paragraph Two</p>
+<p class="bg-danger" #para>This is paragraph Three</p>
+<p class="bg-info" #para>This is paragraph Four</p>
+</ng-content>
+<button class="btn btn-info" (click)="showEmployeeData()">Show Paragraph!!</button>
+
+@if(paragraphTexts.length > 0){
+<table class="table table-bordered table-striped">
+    <thead class="table-primary">
+        <tr>
+            <th>SR No.</th>
+            <th>Paragraphs</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(paragraph of paragraphTexts; track $index ){
+        <tr>
+            <td>{{$index+1}}</td>
+            <td>{{paragraph}}</td>
+        </tr>
+    }
+    </tbody>
+</table>
+}
+<!-- <hr> -->
 <!-- -------------------------------------------------- -->
 <!-- <h2 #heading>Hello Arsheed!!</h2>
 
@@ -97,3 +186,5 @@
 >Show Employee</button>
 
  -->
+
+ {{employeeCounts}}
