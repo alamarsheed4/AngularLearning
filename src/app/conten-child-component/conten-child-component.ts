@@ -22,13 +22,39 @@ export class ContenChildComponent {
 
     empNameDetails: string[] = []
   
-    showNameDetails(){
-      // this.empNameDetails = []
-      this.EmpName().forEach((name)=>{
-        //console.log(name.nativeElement.value);
-        if(name){
-        this.empNameDetails.push(name.nativeElement.value)
-        }
-      })
+    showNameDetails() {
+    this.empNameDetails = [];
+
+    this.EmpName().forEach((name) => {
+
+    const employeeName = name.nativeElement.value.trim();
+
+    if (employeeName !== '') {
+      this.empNameDetails.push(employeeName);
     }
+  });
+}
+
+  paragraphs  =contentChildren<ElementRef<HTMLParagraphElement>>('paragraph')
+
+  paragraphElement:string[] = [];
+
+  Message = "No Paragraph is available"
+
+  showParagraph(){
+    this.paragraphElement = []
+    this.paragraphs().forEach(element => {
+      console.log(element.nativeElement.innerText);
+
+      const Ele = element.nativeElement.innerText
+
+      if(Ele !== ""){
+        this.paragraphElement.push(Ele)
+      }else
+      {
+        this.Message
+      }
+      
+    });
+  }
 }
