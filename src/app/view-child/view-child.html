@@ -1,0 +1,62 @@
+<p>view-child works!</p>
+
+<div class="col-md-4 offset-4">
+<div class="card shadow-sm mb-4">
+    <div class="card card-header bg-primary text-white">
+        Employee Details : view child
+    </div>
+    <div class="card-body">
+        <input type="text" class="form-control" 
+        placeholder="Enter Here" #employee>
+    </div>
+    <div>
+
+    </div>
+
+    <button (click)="ShowEmployeeName()" class="btn btn-info">Click Here</button>
+
+    <p>{{EmployeeName}}</p>
+</div>
+</div>
+
+<div class="col-md-4 offset-4">
+<div class="card shadow-sm mb-4">
+    <div class="card-header bg-danger text-white">
+        Employees
+    </div>
+    <div class="card-body">
+        <div>
+        <label class="form-label">Employee Details</label>
+        <input type="text" class="form-control mt-4" 
+        placeholder="Enter Employee First Name" #empDetails>
+        <input type="text" class="form-control mt-4" 
+        placeholder="Enter Employee Last Name" #empDetails>
+        <input type="text" class="form-control mt-4" 
+        placeholder="Enter Email" #empDetails>
+        <input type="text" class="form-control mt-4" 
+        placeholder="Enter Location" #empDetails>
+        <button class="btn btn-primary mt-3" (click)="ShowEmployeeDetails()"
+        >Show Employee</button>
+        </div>
+    </div>
+</div>
+</div>
+
+@if(Details.length > 0){
+    <table class="table table-bordered table-striped">
+        <thead class="table table-success">
+            <tr>
+                <th>SR No.</th>
+                <th>Employee Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(emp of Details; track $index){
+                <tr>
+                    <td>{{$index+1}}</td>
+                    <td>{{emp}}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
