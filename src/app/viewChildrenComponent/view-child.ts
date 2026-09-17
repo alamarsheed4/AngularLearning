@@ -77,6 +77,7 @@ export class ViewChildComponent {
  Student = viewChildren<ElementRef<HTMLInputElement>>('student')
 
  Message = "Data is unavailable!!"
+ 
  StudentDetails: {
   firstName:string;
   lastName:string;
@@ -103,9 +104,9 @@ export class ViewChildComponent {
 
       const duplicate = this.StudentDetails.some((student)=>
 
-        student.firstName.toLowerCase === fname.toLowerCase && 
-        student.lastName.toLowerCase === lname.toLowerCase &&
-        student.location.toLowerCase === location.toLowerCase
+        student.firstName.toLowerCase() === fname.toLowerCase() && 
+        student.lastName.toLowerCase() === lname.toLowerCase() &&
+        student.location.toLowerCase() === location.toLowerCase()
         
     );
   
