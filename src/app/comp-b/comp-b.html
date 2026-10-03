@@ -1,0 +1,74 @@
+<!-- <p>comp-b works!</p> -->
+
+<h1 class="bg-warning">This is component B!!</h1>
+
+<h1>Hey guys! This is {{Name}}</h1>
+
+<h1>{{getUserDetails()}}</h1>
+
+<div>
+<input type="text" [value]='customerRole'>
+</div>
+<textarea rows="5" cols="50" [value]="Msg"></textarea>
+
+<br><br>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-primary">
+        <tr>
+            <th>SR No</th>
+            <th>Employee Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(empName of customerDetails; track $index)
+        {
+            <tr>
+                <td
+                [ngClass]="{
+            'bg-danger text-white': empName.startsWith('A'),
+            'bg-warning': empName === 'Tanvi'
+            }">
+                {{$index+1}}
+            </td>
+                <td
+                [ngClass]="{
+            'bg-danger text-white': empName.startsWith('A'),
+            'bg-warning': empName === 'Tanvi'
+            }">
+                {{empName}}
+            </td>
+            </tr>
+        }
+        
+    </tbody>
+</table>
+
+<br><br>
+
+<input type="text" placeholder="Enter Name Here" 
+(keyup)="keyUp($event)">
+
+<br><br>
+
+<button class="btn btn-primary"
+(click)="getName()">
+    Submit
+</button>
+<br><br>
+ 
+<h5>Your Name is :{{EmployeeName}} </h5>
+<h5>Your customer Name is :{{customerName}} </h5>
+
+<br><br>
+
+<input type="text" placeholder="Enter Here" #employee>
+
+<br><br>
+
+<button class="btn btn-primary"
+(click)="getEmployeeName(employee.value)">
+    Submit
+</button>
+
+<h5>Employee Name: {{employeeName}}</h5>

@@ -1,8 +1,9 @@
 import { Component} from '@angular/core';
 import {CompA} from './comp-a/comp-a';
 import { FormsModule } from '@angular/forms';
+import { CompB } from './comp-b/comp-b';
 @Component({
-  imports:[CompA,FormsModule],
+  imports:[CompB,CompA, FormsModule],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
@@ -15,7 +16,8 @@ export class App {
 
 
   customerRole = 'Admin'
-Message = "This is Text Area"
+  Message = "This is Text Area"
+
   getUserDetails(){
     return `This is ${this.Name} Salary: ${this.Salary} 
     Title: ${this.title}`
